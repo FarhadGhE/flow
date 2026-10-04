@@ -1,0 +1,8 @@
+FLOW SETUP
+Project: {{PREFIX}} · Expert: {{NAME}} · Created {{YYYY-MM-DD HH:MM}} ({{ZONE}}) by __Manager/turns/{{SETUP_TURN}}
+Domain: {{ONE SENTENCE}}
+Owned paths: {{KEY}}: {{GLOBS}}   (or: planned — {{GLOBS}}; or: none — {{NON-CODE REMIT}})
+Evidence: __Manager/turns/{{SETUP_TURN}}/{{DISCOVERY FILES}}; approved in setup-proposal-v{{N}}.md
+
+The project, in the user's words (verbatim):
+{{THE DESCRIPTION ANSWER}}
