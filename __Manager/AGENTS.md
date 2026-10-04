@@ -42,3 +42,4 @@ Read `process/rules.md` first (it is short), then the procedure that matches:
 | `process/templates/` | the shape of every file setup creates |
 | `process/hosts/` | per-machine commands and expert agents for Claude Code and Codex |
 | `process/VERSION`, `process/CHANGELOG.md` | the flow's version and what changed |
+| `process/LICENSE` | the flow's license: CC0 1.0, public domain |

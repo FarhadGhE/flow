@@ -176,6 +176,8 @@ alone), commit, and ask again. Build nothing before the user explicitly approves
      - `README.md`, which replaces the template's manual;
      - `index.md`;
      - `.env.example`;
+     - and remove the template's `LICENSE`. It covers the template, not this project's records; the
+       flow's own files keep their notice in `__Manager/process/LICENSE`;
    - **`__Manager/important.md`**: the header only, unless setup learned something a later process
      session needs;
    - **`experts/roster.md`**;
@@ -215,7 +217,7 @@ alone), commit, and ask again. Build nothing before the user explicitly approves
    - Every `important.md` is at most 30,720 bytes.
 10. **Commit and push.**
     1. Set the setup turn's `session-summary.md` to `Status: DONE`, and its `session-index.md` row too.
-    2. Commit (`git.md`) the root files, `__Manager` and `experts`.
+    2. Commit (`git.md`) the root files (including the removed `LICENSE`), `__Manager` and `experts`.
     3. Add the approved remote as `origin`, and push with `-u`.
 11. **Reply** with:
     - the experts and what each owns;

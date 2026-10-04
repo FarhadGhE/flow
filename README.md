@@ -44,3 +44,10 @@ agent inside the manage repo and say `plan <Expert>: <request>` or `coordinate <
 
 `__Manager/AGENTS.md` is the first file every agent reads. `__Manager/process/` holds the rules,
 procedures and templates. Projects never edit it; `Upgrade the flow.` replaces it.
+
+## Suggestions and license
+
+Suggestions are welcome as issues or pull requests, as long as they make sense for every project, not
+just one stack or team. The flow is dedicated to the public domain under [CC0 1.0](LICENSE). You can
+use, copy, modify and share it for any purpose, without asking and without credit. Contributions are
+accepted under the same terms.
