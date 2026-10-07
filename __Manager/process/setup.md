@@ -181,6 +181,7 @@ alone), commit, and ask again. Build nothing before the user explicitly approves
    - **`__Manager/important.md`**: the header only, unless setup learned something a later process
      session needs;
    - **`experts/roster.md`**;
+   - **`coordinations/index.md`**, from `templates/coordination-index.md` (the header only);
    - **for each approved expert, `experts/<Name>/`**:
      - `task.txt` (from `templates/expert-task.txt`);
      - `important.md` (the header plus a `## Scope` from discovery, every line with its source);
@@ -217,7 +218,8 @@ alone), commit, and ask again. Build nothing before the user explicitly approves
    - Every `important.md` is at most 30,720 bytes.
 10. **Commit and push.**
     1. Set the setup turn's `session-summary.md` to `Status: DONE`, and its `session-index.md` row too.
-    2. Commit (`git.md`) the root files (including the removed `LICENSE`), `__Manager` and `experts`.
+    2. Commit (`git.md`) the root files (including the removed `LICENSE`), `__Manager`, `experts` and
+       `coordinations`.
     3. Add the approved remote as `origin`, and push with `-u`.
 11. **Reply** with:
     - the experts and what each owns;

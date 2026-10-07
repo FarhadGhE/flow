@@ -2,8 +2,9 @@
 
 This repository is (or is about to become) a **manage repo**: the shared, Git-synced memory of one
 project. Agents do the project's work through it, in **experts** (`experts/<Name>/`, one area each) and
-**coordinations** (`coordinations/<Name>/`, work across areas). Everything is recorded in files and
-committed. Nothing lives only in chat or in an agent's memory.
+**coordinations** (`coordinations/<stamp>-<Name>/`, work across areas, listed in
+`coordinations/index.md`). Everything is recorded in files and committed. Nothing lives only in chat or
+in an agent's memory.
 
 ## Which procedure applies now
 
@@ -25,8 +26,8 @@ Read `process/rules.md` first (it is short), then the procedure that matches:
 - edit `__Manager/AGENTS.md` or anything in `__Manager/process/` inside a project. An upgrade replaces
   them;
 - shorten, correct or reword the user's words where the flow keeps them verbatim;
-- commit or push a code repo, except a coordinated turn's local commit that the round's authority
-  allows;
+- change a code repo before the user's go on a written plan, or commit, push, merge or open a PR there
+  beyond what that plan's authority allows;
 - stage without paths (`git add .`, or `git add -A` with no paths), or commit files your session did
   not write;
 - create a remote, push to a new remote, install anything outside this repo, or contact anyone without
@@ -41,5 +42,5 @@ Read `process/rules.md` first (it is short), then the procedure that matches:
 | `process/git.md` | the exact Git commands (no scripts) |
 | `process/templates/` | the shape of every file setup creates |
 | `process/hosts/` | per-machine commands and expert agents for Claude Code and Codex |
-| `process/VERSION`, `process/CHANGELOG.md` | the flow's version and what changed |
+| `process/VERSION` | the flow's version |
 | `process/LICENSE` | the flow's license: CC0 1.0, public domain |

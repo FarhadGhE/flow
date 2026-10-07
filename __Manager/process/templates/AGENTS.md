@@ -1,8 +1,8 @@
 # {{PROJECT}} — manage repo
 
 This is {{PROJECT}}'s manage repo, run by the flow. For any request, read `__Manager/AGENTS.md` (which
-procedure applies) and `__Manager/process/rules.md` first. Route with `index.md`. On a machine without
-`.env`, run `__Manager/process/join.md` first.
+procedure applies) and `__Manager/process/rules.md` first. Route with `index.md`; coordinations are
+listed in `coordinations/index.md`. On a machine without `.env`, run `__Manager/process/join.md` first.
 
 ## The project
 
@@ -27,12 +27,13 @@ procedure applies) and `__Manager/process/rules.md` first. Route with `index.md`
 
 ## Authority defaults
 
-Every coordination summary starts from these rows. A tick applies to that round only.
+Every change plan and coordination summary starts from these rows. A tick applies to that plan or round
+only.
 
 | Item | Default |
 |---|---|
-| Code repos involved; branch `<feature prefix><kebab-name>` from a fresh integration branch | stated per round |
-| Experts' local path-scoped commit per coordinated turn | always on |
+| Code repos involved; branch `<feature prefix><kebab-name>` from a fresh integration branch | stated per plan or round |
+| Local, path-scoped commits on the feature branch, one per expert area | always on |
 | Push the feature branch at round close (never a protected branch) | no |
 | Open a PR into the integration branch | no |
 | {{ONE ROW PER RESTRICTED COMMAND, DEPLOY, DATABASE OR CLOUD CHANGE, AND PAID API CALLS WITH A BUDGET}} | no |

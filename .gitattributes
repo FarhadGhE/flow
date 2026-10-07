@@ -1,5 +1,6 @@
 # Rows written on different machines are all kept: Git's union merge (rules.md §9).
 session-index.md merge=union
+coordinations/index.md merge=union
 
 # Evidence and archived records stay byte-exact.
 **/evidence/** -whitespace

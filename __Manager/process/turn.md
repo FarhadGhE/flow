@@ -1,8 +1,9 @@
 # Turn — work in one area
 
 - A **direct turn** is one conversation in one directory (`experts/<Name>` or `__Manager`). Every message
-  of the conversation continues the same turn folder; a new conversation starts a new one.
-- A **coordinated turn** is one `FLOW COMMAND` from a coordinator (§5).
+  of the conversation continues the same turn folder; a new conversation starts a new one. An expert's
+  direct turn may change code inside that expert's owned paths, after the user's go (§3).
+- A **coordinated turn** is one `FLOW COMMAND` from a coordinator in dispatch mode (§5).
 
 Read `rules.md` first.
 
@@ -20,14 +21,15 @@ Read `rules.md` first.
 - **The message starts with `FLOW COMMAND`**: a coordinated turn (§5). Its `Project:` must be this
   repo's prefix.
 - **The first word is `<Dir>/turns/<turn-folder>`**: continue that direct turn (§3).
-- **The first word names a directory in `index.md`** (any case; `Billing` means `experts/Billing`):
-  start a new direct turn there.
-- **Otherwise**, read `index.md` and pick the best row.
+- **The first word names a directory in the root `index.md`** (any case; `Billing` means
+  `experts/Billing`): start a new direct turn there.
+- **Otherwise**, read the root `index.md` and pick the best row.
   - If you are confident, say which directory and why, in one line, then start.
   - If you are unsure, or two rows fit, ask the user. Offer the candidates, plus a new expert with a
     suggested PascalCase name. Create only what they choose (§6).
 - **The request needs two or more experts**: suggest `<prefix>-coordinate <Name> <request>` and stop,
-  unless the user wants it done in one directory. `coordinations/` belongs to `coordinate.md`.
+  unless the user wants it handled in one directory (reading other areas, changing code only in its
+  own). `coordinations/` belongs to `coordinate.md`.
 
 ## 3. Direct turn
 
@@ -76,6 +78,21 @@ Never read a whole `turns/` folder.
 - **`handoff.md`**: only when another directory needs to know a decision (template in §5).
 - **`important.md`**: only when genuinely needed (§7).
 
+**Code changes.** A direct turn changes code only in an expert directory, and only inside that
+expert's owned paths (`experts/roster.md`):
+
+1. Write `change-plan-vN.md` in the turn folder: the goal, the paths to change, the branch, the checks,
+   and an authority table that starts from the root `AGENTS.md` defaults. Show it, and wait for the
+   user's go. A change request produces the next version.
+2. After the go, create the feature branch (`git.md`, "Code repos"), make the change, and run the build
+   and tests, plus a browser check where the change shows.
+3. Commit once per code repo, path-scoped (`git.md`, "Code repos"), and record the SHAs in
+   `session-summary.md`.
+4. Push or open a PR only if the plan's authority says so.
+
+A change that needs another expert's paths is a coordination: suggest
+`<prefix>-coordinate <Name> <request>`.
+
 **Close every round** (each user message):
 
 1. Give the `feedbacks.md` entry its `Answered by:` line, and bring `session-summary.md` up to date.
@@ -114,7 +131,7 @@ The envelope:
 
 ```text
 FLOW COMMAND
-Project: <prefix> · Coordination: coordinations/<Name> · Round: <NN> · Command: C<n>
+Project: <prefix> · Coordination: coordinations/<coordination folder> · Round: <NN> · Command: C<n>
 Expert: <Expert> · Agent: <agent name>
 Turn: turn-<stamp>-<Name>
 Read: <only the files you must read>
@@ -187,8 +204,8 @@ Create `experts/<Name>/` (PascalCase) with:
 - `session-index.md`, from `templates/session-index.md`;
 - then its first turn.
 
-Add its rows to `index.md` and `experts/roster.md` once the user has approved its owned paths. In a
-coordination, the coordinator adds them at the round's close. Commit them with the turn.
+Add its rows to the root `index.md` and `experts/roster.md` once the user has approved its owned paths.
+In a coordination, the coordinator adds them at the round's close. Commit them with the turn.
 
 ## 7. `important.md`
 
@@ -204,5 +221,5 @@ When the user says the work is done:
 - set `Status: DONE` and carry the open items forward;
 - put durable rules into `important.md`. A rule the user locked for the whole project goes into the root
   `AGENTS.md` "Project rules", with their OK;
-- change the `index.md` row only if the scope changed;
+- change the root `index.md` row only if the scope changed;
 - record the message and close the round.

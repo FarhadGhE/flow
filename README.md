@@ -32,7 +32,7 @@ folder if needed; it must be empty), then read `__Manager/AGENTS.md` there and f
 | Work in one area | `/<prefix>-plan <Expert> <request>` |
 | Let the agent pick the area | `/<prefix>-plan <request>` |
 | Continue in a new session | the resume line at the end of the agent's last reply |
-| Work across areas | `/<prefix>-coordinate <Name> <request>`. You approve a plan before anything changes |
+| Work across areas | `/<prefix>-coordinate <Name> <request>`. You say `go` on a short plan before anything changes. Simple work the agent does itself; the rest it dispatches to the experts |
 | Add a repo or folder | `Add <path> to the project.` |
 | Set up another machine or teammate | open the agent in their clone and say `Set me up on this machine.` |
 | Get a newer flow | `Upgrade the flow.` |

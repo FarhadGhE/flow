@@ -12,6 +12,7 @@ every round is committed, so any session can continue where the last one stopped
 | Let the agent pick the area | `/{{PREFIX}}-plan <request>` |
 | Continue in a new session | the resume line at the end of the agent's last reply |
 | Work across areas | `/{{PREFIX}}-coordinate <Name> <request>`, for example `/{{PREFIX}}-coordinate {{EXAMPLE_COORDINATION}} {{EXAMPLE_COORDINATION_REQUEST}}` |
+| Find a coordination | `coordinations/index.md`, newest first |
 | Get a plan for another agent to execute | ask for an "implementation plan" in a turn |
 | Add a repo or folder | `Add <path> to the project.` |
 | Get a newer flow | `Upgrade the flow.` |
@@ -25,17 +26,20 @@ or `coordinate <Name>: <request>`.
 |---|---|
 | `{{NAME}}` | {{WHAT IT OWNS, IN A FEW WORDS}} |
 
-Routing is in `index.md`, owned paths in `experts/roster.md`, and settings and authority defaults in
-`AGENTS.md`.
+Routing is in `index.md`, coordinations in `coordinations/index.md`, owned paths in
+`experts/roster.md`, and settings and authority defaults in `AGENTS.md`.
 
 ## Good to know
 
 - Every round ends with a line like `Manage: 3f2c1a9 pushed`. A reply without it is unfinished, so ask
   for it.
-- In a coordination you first approve a short summary: who does what, the final state, and the
-  authority (branch, push, PR, migrations, deploys, spending). Experts code on a feature branch and
-  commit locally. The coordinator verifies their work and never codes. Pushes and PRs happen only as
-  approved.
+- Code changes start with a short plan, and nothing changes until you say `go`. The plan states the
+  authority: branch, push, PR, migrations, deploys, spending. Work happens on a feature branch with
+  local commits; pushes and PRs happen only as approved.
+- A turn in one expert changes only that expert's paths. A coordination round runs in **simple mode**,
+  where the coordinator does the work itself with the experts' recorded context, or in **dispatch
+  mode**, where expert agents do it and the coordinator verifies their work and never codes. The
+  round's summary says which; your request can choose.
 - Several people can work in different experts, or the same one, at the same time. Only one person
   works on a coordination at a time.
 
